@@ -8,7 +8,7 @@ public class UVGizmoDebugger : MonoBehaviour
 
     void OnDrawGizmos()
     {
-        Mesh mesh = GetComponent<MeshFilter>().mesh;
+        Mesh mesh = GetComponent<MeshFilter>().sharedMesh;
         if (mesh == null)
             mesh = GetComponent<SkinnedMeshRenderer>().sharedMesh;
         
