@@ -136,8 +136,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51fb42f777cc4f369cc16ada86de1397, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UVGizmoDebugger
-  gizmoScale: 2
-  offset: {x: -3, y: 0, z: 0}
+  gizmoScale: 3
+  offset: {x: -3.83, y: 0, z: 0}
   lineColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!33 &235483253
 MeshFilter:
@@ -147,34 +147,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 235483245}
   m_Mesh: {fileID: 1472203036}
---- !u!114 &235483254
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 235483245}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7130bef5ad3b4fa1b3180e7eed095111, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MeshDebugger
---- !u!114 &235483255
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 235483245}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89835703e9354c889642a6358820ffc4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::UVIslandOutlineGizmo
-  gizmoScale: 1
-  offset: {x: 0, y: 0, z: 0}
-  outlineColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-  uvPrecision: 10000
 --- !u!1001 &527199194
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -242,12 +214,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3198453359107063260, guid: 1004336e9ed494a489fabcaee7b6a672, type: 3}
       insertIndex: -1
       addedObject: {fileID: 235483253}
-    - targetCorrespondingSourceObject: {fileID: 3198453359107063260, guid: 1004336e9ed494a489fabcaee7b6a672, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 235483254}
-    - targetCorrespondingSourceObject: {fileID: 3198453359107063260, guid: 1004336e9ed494a489fabcaee7b6a672, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 235483255}
   m_SourcePrefab: {fileID: 100100000, guid: 1004336e9ed494a489fabcaee7b6a672, type: 3}
 --- !u!1 &977533941
 GameObject:
@@ -465,7 +431,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4621370170511687870, guid: 17ff8f8b1e84b0a40932bbc3babc2497, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.9955845
+      value: 2.881
       objectReference: {fileID: 0}
     - target: {fileID: 4621370170511687870, guid: 17ff8f8b1e84b0a40932bbc3babc2497, type: 3}
       propertyPath: m_LocalPosition.y
@@ -513,7 +479,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 5434075652240169476, guid: 17ff8f8b1e84b0a40932bbc3babc2497, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1992353192}
+      addedObject: {fileID: 1992353196}
   m_SourcePrefab: {fileID: 100100000, guid: 17ff8f8b1e84b0a40932bbc3babc2497, type: 3}
 --- !u!1 &1460709653
 GameObject:
@@ -602,7 +568,7 @@ Transform:
   m_GameObject: {fileID: 1460709653}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 2.1, y: 0.85970664, z: 2.23}
+  m_LocalPosition: {x: 2.174, y: 0.85970664, z: 2.23}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -835,7 +801,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5434075652240169476, guid: 17ff8f8b1e84b0a40932bbc3babc2497, type: 3}
   m_PrefabInstance: {fileID: 1423830221}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1992353192
+--- !u!114 &1992353196
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -848,7 +814,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UVGizmoDebugger
   gizmoScale: 1
-  offset: {x: 0, y: 0, z: 0}
+  offset: {x: 0.13, y: -0.15, z: 0.75}
   lineColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
