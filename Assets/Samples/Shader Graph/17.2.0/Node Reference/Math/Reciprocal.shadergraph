@@ -229,7 +229,7 @@
         "divided by"
     ],
     "m_Precision": 0,
-    "m_PreviewExpanded": false,
+    "m_PreviewExpanded": true,
     "m_DismissedVersion": 0,
     "m_PreviewMode": 0,
     "m_CustomColors": {
@@ -407,8 +407,8 @@
     "m_ObjectId": "74437b089b454512bb351a8e2ba338ea",
     "m_Title": "Under The Hood",
     "m_Position": {
-        "x": -635.5000610351563,
-        "y": 9.999988555908204
+        "x": -636.0,
+        "y": 9.3333740234375
     }
 }
 
@@ -798,7 +798,7 @@
     "m_Hidden": false,
     "m_ShaderOutputName": "X",
     "m_StageCapability": 3,
-    "m_Value": 0.0,
+    "m_Value": 2.0,
     "m_DefaultValue": 0.0,
     "m_Labels": []
 }

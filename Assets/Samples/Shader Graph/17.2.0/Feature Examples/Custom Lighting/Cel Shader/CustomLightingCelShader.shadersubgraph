@@ -1695,12 +1695,24 @@
     "overrideHLSLDeclaration": false,
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
+    "m_PerRendererData": false,
+    "m_customAttributes": [],
     "m_Value": 1.0,
     "m_FloatType": 0,
     "m_RangeValues": {
         "x": 0.0,
         "y": 1.0
-    }
+    },
+    "m_SliderType": 0,
+    "m_SliderPower": 3.0,
+    "m_EnumType": 0,
+    "m_CSharpEnumString": "",
+    "m_EnumNames": [
+        "Default"
+    ],
+    "m_EnumValues": [
+        0
+    ]
 }
 
 {
@@ -2284,7 +2296,7 @@
     "m_Group": {
         "m_Id": "f1faf69c94d2409f8adf16f82ad5eff3"
     },
-    "m_Name": "AdjustSmoothness",
+    "m_Name": "Adjust Smoothness",
     "m_DrawState": {
         "m_Expanded": true,
         "m_Position": {
@@ -2378,7 +2390,7 @@
     },
     "m_Name": "Multiply",
     "m_DrawState": {
-        "m_Expanded": false,
+        "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
             "x": -1317.0,
@@ -2908,6 +2920,8 @@
     "overrideHLSLDeclaration": false,
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
+    "m_PerRendererData": false,
+    "m_customAttributes": [],
     "m_Value": true
 }
 
@@ -2977,7 +2991,7 @@
     "m_DefaultValue": {
         "x": 0.0,
         "y": 0.0,
-        "z": 0.0
+        "z": 1.0
     },
     "m_Labels": []
 }
@@ -3608,7 +3622,7 @@
     "m_Group": {
         "m_Id": ""
     },
-    "m_Name": "MainLight",
+    "m_Name": "Main Light",
     "m_DrawState": {
         "m_Expanded": true,
         "m_Position": {
@@ -4158,7 +4172,7 @@
     "m_Group": {
         "m_Id": ""
     },
-    "m_Name": "CustomLightingAdditionalLights",
+    "m_Name": "Custom Lighting Additional Lights",
     "m_DrawState": {
         "m_Expanded": true,
         "m_Position": {
@@ -4552,6 +4566,8 @@
     "overrideHLSLDeclaration": false,
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
+    "m_PerRendererData": false,
+    "m_customAttributes": [],
     "m_Value": {
         "x": 0.5,
         "y": 0.5,
@@ -4727,7 +4743,7 @@
     },
     "m_Name": "Multiply",
     "m_DrawState": {
-        "m_Expanded": false,
+        "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
             "x": -1447.0,
@@ -5028,6 +5044,8 @@
     "overrideHLSLDeclaration": false,
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
+    "m_PerRendererData": false,
+    "m_customAttributes": [],
     "m_Value": {
         "x": 0.0,
         "y": 0.0,
@@ -5243,8 +5261,8 @@
     "m_ObjectId": "912a89a62fd24f93807c0fb40167105a",
     "m_Title": "Lambert Diffuse",
     "m_Position": {
-        "x": -543.7372436523438,
-        "y": -827.831787109375
+        "x": -545.3333129882813,
+        "y": -827.9998779296875
     }
 }
 
@@ -5738,6 +5756,8 @@
     "overrideHLSLDeclaration": false,
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
+    "m_PerRendererData": false,
+    "m_customAttributes": [],
     "m_Value": {
         "x": 0.0,
         "y": 0.0,
@@ -5862,12 +5882,24 @@
     "overrideHLSLDeclaration": false,
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
+    "m_PerRendererData": false,
+    "m_customAttributes": [],
     "m_Value": 0.0,
     "m_FloatType": 0,
     "m_RangeValues": {
         "x": 0.0,
         "y": 1.0
-    }
+    },
+    "m_SliderType": 0,
+    "m_SliderPower": 3.0,
+    "m_EnumType": 0,
+    "m_CSharpEnumString": "",
+    "m_EnumNames": [
+        "Default"
+    ],
+    "m_EnumValues": [
+        0
+    ]
 }
 
 {
@@ -6699,12 +6731,24 @@
     "overrideHLSLDeclaration": false,
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
+    "m_PerRendererData": false,
+    "m_customAttributes": [],
     "m_Value": 0.5,
     "m_FloatType": 0,
     "m_RangeValues": {
         "x": 0.0,
         "y": 1.0
-    }
+    },
+    "m_SliderType": 0,
+    "m_SliderPower": 3.0,
+    "m_EnumType": 0,
+    "m_CSharpEnumString": "",
+    "m_EnumNames": [
+        "Default"
+    ],
+    "m_EnumValues": [
+        0
+    ]
 }
 
 {
@@ -6879,12 +6923,24 @@
     "overrideHLSLDeclaration": false,
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
+    "m_PerRendererData": false,
+    "m_customAttributes": [],
     "m_Value": 0.5,
     "m_FloatType": 0,
     "m_RangeValues": {
         "x": 0.0,
         "y": 1.0
-    }
+    },
+    "m_SliderType": 0,
+    "m_SliderPower": 3.0,
+    "m_EnumType": 0,
+    "m_CSharpEnumString": "",
+    "m_EnumNames": [
+        "Default"
+    ],
+    "m_EnumValues": [
+        0
+    ]
 }
 
 {
@@ -7337,7 +7393,7 @@
     "m_Group": {
         "m_Id": "912a89a62fd24f93807c0fb40167105a"
     },
-    "m_Name": "DiffuseCelShader",
+    "m_Name": "Diffuse Cel Shader",
     "m_DrawState": {
         "m_Expanded": true,
         "m_Position": {
@@ -7449,8 +7505,8 @@
     "m_ObjectId": "f1faf69c94d2409f8adf16f82ad5eff3",
     "m_Title": "Blinn Specular",
     "m_Position": {
-        "x": -1826.9998779296875,
-        "y": -591.9999389648438
+        "x": -1827.333251953125,
+        "y": -592.0
     }
 }
 
