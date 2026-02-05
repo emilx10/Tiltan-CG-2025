@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: ManualLight
-  m_Shader: {fileID: -6465566751694194690, guid: 3788b5068de615e448a53e292a6faebd, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 3789014281cde8346972e63479415c87, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -62,6 +62,14 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _ParallaxMap:
         m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_462f675827464582b8c0636262acf7c6_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: d7aa8e05f3b6118478e7caf71b9232c2, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_cc5eb2ee281c4a4ea1e98739a225599b_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: 8c31c20ac2129c3428084be388816642, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:

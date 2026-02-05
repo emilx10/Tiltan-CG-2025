@@ -25,10 +25,10 @@ Shader "Unlit/Shader0" // shader name  - shader1 under shader category - Unlit
         Tags { "RenderType"="Opaque" } // common tags: Opaque, Transparent, Overlay,
         LOD 100
 
-        Blend SrcAlpha OneMinusSrcAlpha //Specifies the blend mode (we didnt talk about this yet)
-        ZWrite On //writes to the depth buffer (we didnt talk about this yet)
-        ZTest LEqual //depth comparison function (we didnt talk about this yet)
-        Cull Back //face culling mode (we didnt talk about this yet)
+        Blend SrcAlpha OneMinusSrcAlpha //Specifies the blend mode 
+        ZWrite On //writes to the depth buffer 
+        ZTest LEqual //depth comparison function 
+        Cull Back //face culling mode 
 
         Pass
         {
@@ -84,7 +84,6 @@ Shader "Unlit/Shader0" // shader name  - shader1 under shader category - Unlit
             v2f vert (appdata v)
             {
                 v2f o;
-               
                 
                 o.vertex = UnityObjectToClipPos(v.vertex);
                 
@@ -97,7 +96,7 @@ Shader "Unlit/Shader0" // shader name  - shader1 under shader category - Unlit
             // frag func - last function in the flow (after the GPU do the rasterizer)
             fixed4 frag (v2f i) : SV_Target
             {
-                return i.uv.x;
+                return float4(i.worldPos.xyz, 1.0);
             }
             ENDCG
         }

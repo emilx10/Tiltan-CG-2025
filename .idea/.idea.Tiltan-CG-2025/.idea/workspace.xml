@@ -6,11 +6,26 @@
   <component name="ChangeListManager">
     <list default="true" id="e6230c4a-7785-4653-92f5-d84549da8d89" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Tiltan-CG-2025/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Tiltan-CG-2025/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Diffuse_Light_HLSL.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Diffuse_Light_HLSL.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/ManualLight.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/ManualLight.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Shader Graph/17.2.0/Feature Examples/Custom Lighting/Cel Shader/CustomLightingCelShader.shadersubgraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Samples/Shader Graph/17.2.0/Feature Examples/Custom Lighting/Cel Shader/CustomLightingCelShader.shadersubgraph" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Shader Graph/17.2.0/Feature Examples/Custom Lighting/Simple/CustomLightingSimpleAdditionalLights.shadersubgraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Samples/Shader Graph/17.2.0/Feature Examples/Custom Lighting/Simple/CustomLightingSimpleAdditionalLights.shadersubgraph" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Shader Graph/17.2.0/Node Reference/Math/Reciprocal.shadergraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Samples/Shader Graph/17.2.0/Node Reference/Math/Reciprocal.shadergraph" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Lesson3.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Lesson3.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Lesson6HLSL.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Lesson6HLSL.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Shader Graph/UnlitLight1.shadergraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shader Graph/UnlitLight1.shadergraph" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Shaders/Shader0.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/Shader0.shader" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Shaders/StencilMask.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/StencilMask.shader" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CopilotPersistence">
+    <persistenceIdMap>
+      <entry key="_G:/Programming/Tiltan-CG-2025" value="35kTSPKIW1ZR1jXw9lBKVveRBLO" />
+    </persistenceIdMap>
   </component>
   <component name="EmbeddingIndexingInfo">
     <option name="cachedIndexableFilesCount" value="1" />
@@ -30,6 +45,8 @@
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/UVGizmoDebugger.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/UVIslandOutlineGizmo.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/UVIslandOutlineGizmo2.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Temp/GeneratedFromGraph-Camera.shader" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Temp/GeneratedFromGraph-UV.shader" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="McpProjectServerCommands">
     <commands />
@@ -44,26 +61,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Attach to Unity Editor.Attach to Unity Editor.executor": "Debug",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.MCP Project settings loaded": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "git-widget-placeholder": "Lesson6-0-HLSL",
-    "ignore.virus.scanning.warn.message": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "ml.llm.LLMThirdPartyAiProvidersConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Attach to Unity Editor.Attach to Unity Editor.executor&quot;: &quot;Debug&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Lesson6-0-HLSL&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;ml.llm.LLMThirdPartyAiProvidersConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecapSpentCounter">
     <option name="endsOfQuotaMs" value="1770199220868" />
   </component>
@@ -126,6 +143,7 @@
       <workItem from="1767293677044" duration="1710000" />
       <workItem from="1767868437024" duration="4135000" />
       <workItem from="1768479137322" duration="1619000" />
+      <workItem from="1768487612920" duration="6080000" />
     </task>
     <servers />
   </component>

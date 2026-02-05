@@ -19,6 +19,7 @@
                 Ref [_StencilID]
                 Comp Always
                 Pass Replace
+                Fail Keep
             }
             
             ColorMask 0
