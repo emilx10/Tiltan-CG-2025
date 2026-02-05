@@ -1,153 +1,127 @@
-﻿// ShaderLab/HLSL
-// File: `Assets/Shaders/GeomatricShader0.shader`
-
-// Notes: each section is annotated; geometry stage has detailed explanations and caveats.
-
-Shader "Custom/GeomatricShader0"
+﻿Shader "Custom/GeometryGrass"
 {
-    // Properties block defines inspector-exposed parameters.
     Properties
     {
-        // _Color: RGBA tint used in the fragment shader.
-        // Exposed as a Color in the material inspector.
-        _Color ("Color", Color) = (1,1,1,1)
+        _Color ("Grass Color", Color) = (0.2, 0.8, 0.2, 1)
 
-        // _PushAmount: scalar amount to push triangle vertices along the triangle normal.
-        // Exposed as a float in the material inspector.
-        _PushAmount ("Triangle Push Amount", Float) = 0.1
+        _BladeHeight ("Blade Height", Float) = 0.5
+        _BladeWidth  ("Blade Width", Float) = 0.05
+        _BladeCount  ("Blades Per Triangle", Int) = 3
+        _WindStrength ("Wind Strength", Float) = 0.1
     }
 
     SubShader
     {
-        // Tags hint to the render pipeline about how to treat this material.
         Tags { "RenderType"="Opaque" }
+        LOD 100
 
         Pass
         {
-            // Begin HLSL block for programmable pipeline stages.
             HLSLPROGRAM
+            #pragma vertex Vert
+            #pragma geometry Geo
+            #pragma fragment Frag
+            #pragma target 4.0
 
-            // Pragma directives tell Unity which shader entrypoints to compile.
-            #pragma vertex Vert       // Vertex shader entry point
-            #pragma geometry Geo      // Geometry shader entry point
-            #pragma fragment Frag     // Fragment (pixel) shader entry point
-            #pragma target 4.0        // Require Shader Model 4.0 (geometry shaders)
-
-            // Helper macros and functions (UnityObjectToClipPos, matrices, etc.)
             #include "UnityCG.cginc"
 
-            // ---- Input structure from mesh to vertex shader ----
             struct appdata
             {
-                float4 vertex : POSITION; // object-space position (x,y,z,w)
-                float3 normal : NORMAL;   // object-space normal (if provided by mesh)
+                float4 vertex : POSITION;
+                float3 normal : NORMAL;
             };
 
-            // ---- Data passed from vertex shader to geometry shader ----
             struct v2g
             {
-                float4 clipPos : SV_POSITION; // clip-space position (computed in vertex for convenience)
-                float3 objPos  : TEXCOORD0;   // object-space position passed explicitly (use TEXCOORD* for custom data)
-                float3 normal  : NORMAL;      // per-vertex normal (object space) — note: semantic can be reused
+                float3 objPos : TEXCOORD0;
             };
 
-            // ---- Data emitted from geometry shader to fragment shader ----
             struct g2f
             {
-                float4 clipPos : SV_POSITION; // final clip-space position for rasterization
-                // Intentionally minimal: no interpolants passed to keep shading uniform (_Color).
-                // Add TEXCOORDs / normals here if per-pixel shading is needed.
+                float4 clipPos : SV_POSITION;
+                float heightLerp : TEXCOORD0;
             };
 
-            // ---- Uniforms set from material / C# ----
-            float4 _Color;      // material color (RGBA)
-            float _PushAmount;  // distance to push triangle along its normal
+            float4 _Color;
+            float _BladeHeight;
+            float _BladeWidth;
+            int _BladeCount;
+            float _WindStrength;
 
-            // ---- Vertex shader: prepare data for geometry stage ----
-            v2g Vert (appdata v)
+            // Pseudo random
+            float rand(float3 co)
+            {
+                return frac(sin(dot(co, float3(12.9898,78.233,45.5432))) * 43758.5453);
+            }
+
+            v2g Vert(appdata v)
             {
                 v2g o;
-
-                // Transform object-space position to clip-space for depth/position.
-                // This is computed here but the geometry shader recomputes clip positions after pushing.
-                o.clipPos = UnityObjectToClipPos(v.vertex);
-
-                // Store object-space position explicitly so geometry shader can compute
-                // triangle-space operations (normals, offsets) without projection distortion.
-                o.objPos  = v.vertex.xyz;
-
-                // Pass through vertex normal (object-space).
-                // Note: if mesh doesn't have normals, this will be zero.
-                o.normal  = v.normal;
-
+                o.objPos = v.vertex.xyz;
                 return o;
             }
 
-           // ---- Geometry shader: receives an entire triangle and can emit new geometry ----
-            // [maxvertexcount(3)] tells the GPU how many vertices this geometry shader will output per input primitive.
-            // Here we emit exactly 3 vertices (one triangle) for each input triangle.
-            [maxvertexcount(3)]
-            void Geo(
-                triangle v2g input[3],               // input[] contains the 3 vertices of the source triangle (object-space data set in Vert)
-                inout TriangleStream<g2f> triStream  // TriangleStream: emits vertices as indexed triangles (3 vertices per triangle).
-                                                     // Alternative streams:
-                                                     // - LineStream<g2f>: emits vertices as line segments (2 vertices per line).
-                                                     // - PointStream<g2f>: emits individual points (1 vertex per point).
-                                                     // The 'inout' modifier allows reading and writing to the stream.
-            )
-            
+            // Each blade = 2 triangles = 6 vertices
+            // Allow up to 4 blades safely
+            [maxvertexcount(24)]
+            void Geo(triangle v2g input[3], inout TriangleStream<g2f> triStream)
             {
-                
-
-                // Read object-space positions for each corner of the triangle.
                 float3 p0 = input[0].objPos;
                 float3 p1 = input[1].objPos;
                 float3 p2 = input[2].objPos;
 
-                // Compute two triangle edges in object space.
-                float3 edge1 = p1 - p0;
-                float3 edge2 = p2 - p0;
+                float3 triCenter = (p0 + p1 + p2) / 3.0;
 
-                // Cross product gives a vector perpendicular to the triangle surface (object space).
-                // Normalize to make _PushAmount an interpretable distance scale.
-                float3 triNormal = normalize(cross(edge1, edge2));
-
-                // NOTE: handle degenerate triangles:
-                // If edge1 and edge2 are nearly colinear, cross(edge1, edge2) -> 0 and normalize yields NaN.
-               
-                g2f o;
-
-                // Emit each vertex displaced along the triangle normal.
-                // The sign/direction of triNormal depends on the vertex winding (clockwise vs counter-clockwise).
-               
-                for (int i = 0; i < 3; i++)
+                for (int b = 0; b < _BladeCount; b++)
                 {
-                    // Offset in object space to avoid projection distortion.
-                    float3 newObjPos = input[i].objPos + triNormal * _PushAmount;
+                    float r1 = rand(triCenter + b);
+                    float r2 = rand(triCenter + b * 2.17);
 
-                    // Convert the pushed object-space position into clip space for rasterization.
-                    // UnityObjectToClipPos multiplies by the object-to-clip matrix (model * view * proj).
-                    float4 clip = UnityObjectToClipPos(float4(newObjPos, 1.0));
+                    // Random point inside triangle
+                    float3 pos = lerp(lerp(p0, p1, r1), p2, r2);
 
-                    // Assign the SV_POSITION which the rasterizer uses.
-                    o.clipPos = clip;
+                    // Wind sway
+                    float wind = sin(_Time.y * 2 + pos.x * 3) * _WindStrength;
 
-                    // Emit new vertex to the triangle stream.
-                    triStream.Append(o);
+                    float3 up = float3(0,1,0);
+                    float3 side = float3(_BladeWidth, 0, 0);
+
+                    float3 tip = pos + up * _BladeHeight + float3(wind,0,0);
+
+                    float3 v0 = pos - side;
+                    float3 v1 = pos + side;
+                    float3 v2 = tip - side * 0.5;
+                    float3 v3 = tip + side * 0.5;
+
+                    g2f o;
+
+                    // Bottom vertices darker
+                    o.heightLerp = 0;
+                    o.clipPos = UnityObjectToClipPos(float4(v0,1)); triStream.Append(o);
+                    o.clipPos = UnityObjectToClipPos(float4(v1,1)); triStream.Append(o);
+
+                    // Tip vertices lighter
+                    o.heightLerp = 1;
+                    o.clipPos = UnityObjectToClipPos(float4(v2,1)); triStream.Append(o);
+
+                    triStream.RestartStrip();
+
+                    o.heightLerp = 0;
+                    o.clipPos = UnityObjectToClipPos(float4(v1,1)); triStream.Append(o);
+
+                    o.heightLerp = 1;
+                    o.clipPos = UnityObjectToClipPos(float4(v3,1)); triStream.Append(o);
+                    o.clipPos = UnityObjectToClipPos(float4(v2,1)); triStream.Append(o);
+
+                    triStream.RestartStrip();
                 }
-
-                // End the current primitive strip. RestartStrip ensures the next triangle emitted
-                // does not get connected as part of a triangle strip with the previous output.
-                triStream.RestartStrip();
             }
 
-            // ---- Fragment shader: simple solid color output ----
-            // Receives interpolated g2f (only clipPos used by rasterizer).
-            float4 Frag (g2f i) : SV_Target
+            float4 Frag(g2f i) : SV_Target
             {
-                // For this shader we return a uniform color. Replace or expand this with lighting
-                // if you want per-pixel shading using normals/UVs/etc.
-                return _Color;
+                float4 bottom = _Color * 0.5;
+                float4 top = _Color;
+                return lerp(bottom, top, i.heightLerp);
             }
 
             ENDHLSL
