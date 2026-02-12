@@ -1,0 +1,17 @@
+// Each #kernel tells which function to compile; you can have many kernels
+#pragma kernel WriteToTexture
+
+// Create a RenderTexture with enableRandomWrite flag and set it
+// with the c# script using SetTexture
+// shared WTexture2D<float4> Result; - if you want to share the texture between multiple kernels in the same .compute file
+
+RWTexture2D<float4> Result;
+
+
+[numthreads(8,8,1)]
+void WriteToTexture (uint3 id : SV_DispatchThreadID)
+{
+    float bChannel = 0;
+
+    Result[id.xy] = float4(0.0, 0.0, bChannel, 1.0);
+}
