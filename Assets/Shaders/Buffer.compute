@@ -62,10 +62,17 @@ void Circles (uint3 id : SV_DispatchThreadID)
 	drawCircle( centre, radius );
 }
 
-[numthreads(8,8,1)]
-void Clear (uint3 id : SV_DispatchThreadID)
+[numthreads(8, 8, 1)]
+void Clear(uint3 id : SV_DispatchThreadID)
 {
-	Result[id.xy] = clearColor;
+    if (id.x < 2)
+    {
+        Result[id.xy] = float4(1, 0, 0, 1);
+    }
+    else
+    {
+        Result[id.xy] = float4(0, 1, 0, 1);
+    }
 }
 
 
