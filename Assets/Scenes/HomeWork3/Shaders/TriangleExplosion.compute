@@ -1,0 +1,29 @@
+#pragma kernel CSMain
+
+struct TriangleData
+{
+     float3 offset;
+     float3 velocity;
+     float lifetime;
+};
+
+RWStructuredBuffer<TriangleData> triangleBuffer;
+
+float deltaTime;
+
+[numthreads(64, 1, 1)]
+void CSMain(uint id : SV_DispatchThreadID)
+{
+    TriangleData t = triangleBuffer[id];
+
+    t.offset += t.velocity * deltaTime;
+
+    t.lifetime -= deltaTime;
+
+    if (t.lifetime < 0)
+    {
+        t.velocity = float3(0, 0, 0);
+    }
+
+    triangleBuffer[id] = t;
+}

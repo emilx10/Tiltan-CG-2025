@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: RainMAT
-  m_Shader: {fileID: -6465566751694194690, guid: f2e543706d9c4344aa1db8d5ba705540, type: 3}
+  m_Name: Custom_TriangleExplosion
+  m_Shader: {fileID: 4800000, guid: 8a478471b9f97cc43b5b6b68854e4df1, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -22,22 +22,11 @@ Material:
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
-    m_TexEnvs:
-    - unity_Lightmaps:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_LightmapsInd:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_ShadowMasks:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
+    m_TexEnvs: []
     m_Ints: []
     m_Floats:
-    - _GlobalRainIntensity: 1
-    m_Colors: []
+    - _ExplosionStrength: -0.13
+    m_Colors:
+    - _Color: {r: 1, g: 0.5, b: 0, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
